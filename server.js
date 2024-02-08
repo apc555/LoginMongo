@@ -26,7 +26,7 @@ app.post("/texto",(req,res)=>{
 })
 
 // Esta petición necesita responder
-//Podes observar o que fai o navegador se comentas a línea 31
+//Podes observar o que fai o navegador se comentas a línea 34
 app.post('/login', (req, res) => {
     let email    = req.body.email;
     let password = req.body.password;
