@@ -3,8 +3,10 @@ envioForm.addEventListener("click",async (e)=>{
     console.log("clico envioForm")
     let datoEnvio = {
         method:'POST',
+        /* headers: {
        /*  headers: {
             "Content-Type": "application/x-www-form-urlencoded"
+        }, */
         }, */
         body: new FormData(datosForm)
     } 
