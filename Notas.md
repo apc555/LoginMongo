@@ -20,6 +20,7 @@ envioTexto.addEventListener("click",async (e)=>{
     
 })
 ```
+A continuación poño un código do servidor:
 ```
 // para datos en JSON en body
 app.use(express.json());
@@ -27,12 +28,8 @@ app.use(express.json());
 
 ## urlencoded 
 
-Este middleware utilízase para recibir o dato do formulario: 
+Este middleware utilízase para recibir o dato do formulario no cliente: 
 
-```
- // para headers: application/x-www-form-urlencoded 
-app.use(express.urlencoded({ extended: true }));
-```
 
 ```
 envioForm.addEventListener("click",async (e)=>{
@@ -49,4 +46,11 @@ envioForm.addEventListener("click",async (e)=>{
    await fetch('/logueo',datoEnvio)
     
 })
+```
+
+E no servidor usumos o seguinte código:
+
+```
+ // para headers: application/x-www-form-urlencoded 
+app.use(express.urlencoded({ extended: true }));
 ```
