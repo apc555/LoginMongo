@@ -21,7 +21,7 @@ envioTexto.addEventListener("click",async (e)=>{
         method:'POST',
         headers: {
             "Content-Type": "application/json"
-        },
+        }, 
         body: JSON.stringify(oInput)
     }
    await fetch('/texto',datoEnvio)
