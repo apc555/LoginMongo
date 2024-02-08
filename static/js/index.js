@@ -3,9 +3,9 @@ envioForm.addEventListener("click",async (e)=>{
     console.log("clico envioForm")
     let datoEnvio = {
         method:'POST',
-        headers: {
+       /*  headers: {
             "Content-Type": "application/x-www-form-urlencoded"
-        },
+        }, */
         body: new FormData(datosForm)
     } 
     
@@ -21,7 +21,7 @@ envioTexto.addEventListener("click",async (e)=>{
         method:'POST',
         headers: {
             "Content-Type": "application/json"
-        }, 
+        },  
         body: JSON.stringify(oInput)
     }
    await fetch('/texto',datoEnvio)

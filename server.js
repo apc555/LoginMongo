@@ -2,14 +2,14 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const app = express();
-
+const fileUpload = require("express-fileupload");
 
 // para headers: application/x-www-form-urlencoded 
 app.use(express.urlencoded({ extended: true }));
 // para datos en JSON en body
 app.use(express.json());
 app.use(cors())
-
+app.use(fileUpload());
 // Accedo o arquivo estático
 app.use(express.static(path.join(__dirname, "static")));
 
