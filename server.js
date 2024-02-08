@@ -3,8 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const fileupload = require("express-fileupload")
 const app = express();
-const fileUpload = require("express-fileupload");
-
+const {enviopaxina} = require("./midelwares/enviopaxina.js")
 // para headers: application/x-www-form-urlencoded 
 app.use(express.urlencoded({ extended: true }));
 // para datos en JSON en body
@@ -12,7 +11,8 @@ app.use(express.json());
 app.use(cors())
 app.use(fileupload())
 // Accedo o arquivo estático
-app.use(express.static(path.join(__dirname, "static")));
+const carpetaStatica = path.join(__dirname, "static")
+app.use(express.static(carpetaStatica));
 
 app.post("/logueo",(req,res)=>{
     console.log('name e nome: ',req.body.nome)
@@ -28,11 +28,6 @@ app.post("/texto",(req,res)=>{
 
 // Esta petición necesita responder
 //Podes observar o que fai o navegador se comentas a línea 34
-app.post('/login', (req, res) => {
-    let email    = req.body.email;
-    let password = req.body.password;
-    console.log('loguin??? ',email,password)
-    res.send(`Email: ${email}, Password: ${password}`);
-  });
+app.post('/login', enviopaxina);
 
 app.listen(3000)
