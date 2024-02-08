@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script async src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    
+    <form id="datosForm">        
+      <fieldset name="userFields">
+          <legend>Datos</legend>
+          <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text">
+          <label for="primer-apelido">Primer apelido</label>
+            <input id="primer-apelido" name="primerapelido" type="text">
+          <label for="segundo-apelido">Segundo apelido</label>
+            <input id="segundo-apelido" name="segundoapelido" type="text">
+          
+      </fieldset>
+      <button id="envioForm" >ENDPOINT logueo</button>
+    </form>
+    <form action="/login" method="POST">
+      <label for="email">Email</label>
+      <input id="email" type="text" name="email">
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password">
+      
+      <button type="submit">
+        ENDPOINT login
+      </button>
+    </form>
+    <div>
+      <input id="texto" type="text" name="dato">
+      <button id="envioTexto">ENDPOINT texto</button>
+    </div>
+</body>
+</html>
