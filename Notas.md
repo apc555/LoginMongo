@@ -86,6 +86,45 @@ app.use(fileupload())
 ```
 
 
+Se non nos déramos conta, e enviásemos tal que así:
+```javascript
+envioForm.addEventListener("click",async (e)=>{
+    e.preventDefault()
+    console.log("clico envioForm")
+    let datoEnvio = {
+        method:'POST',
+         headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }, 
+        body: new FormData(datosForm)
+    } 
+    
+   await fetch('/logueo',datoEnvio)
+    
+})
+```
+saería por consola o seguinte: 
+```javascript
+
+ {
+  '------WebKitFormBoundaryFB2O7HBW9FxfHfLh\r\nContent-Disposition: form-data; name': '"nome"\r\n' +
+    '\r\n' +
+    'fadsf\r\n' +
+    '------WebKitFormBoundaryFB2O7HBW9FxfHfLh\r\n' +
+    'Content-Disposition: form-data; name="primerapelido"\r\n' +
+    '\r\n' +
+    'dfadsf\r\n' +
+    '------WebKitFormBoundaryFB2O7HBW9FxfHfLh\r\n' +
+    'Content-Disposition: form-data; name="segundoapelido"\r\n' +
+    '\r\n' +
+    'dfadsf\r\n' +
+    '------WebKitFormBoundaryFB2O7HBW9FxfHfLh--\r\n'
+}
+```
+
+Temos que ter en conta este detalle!!!
+
+
 ## Observación no código do botón e input con texto
 
 Neste código é indispensable colocar a cabeceira de `headers`:
