@@ -54,3 +54,33 @@ E no servidor usumos o seguinte código:
  // para headers: application/x-www-form-urlencoded 
 app.use(express.urlencoded({ extended: true }));
 ```
+
+## Instalando o módulo `express-fileupload`
+
+Cando instalamos este módulo, fará o traballo de interpretar ou transformar o `corpo` da mensaxe no `servidor`. 
+
+No cliente deberemos enviar dito evento da seguinte maneira:
+
+
+```javascript
+
+envioForm.addEventListener("click",async (e)=>{
+    e.preventDefault()
+    console.log("clico envioForm")
+    let datoEnvio = {
+        method:'POST',
+        body: new FormData(datosForm)
+    } 
+    
+   await fetch('/logueo',datoEnvio)
+    
+})
+```
+
+E no servidor, deberemos usar o middleware do seguinte xeito, introducindoo ao comenzo do programa.
+
+```javascript
+const fileupload = require("express-fileupload");
+...
+app.use(fileupload())
+```

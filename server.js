@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const fileupload = require("express-fileupload")
 const app = express();
 
 
@@ -9,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 // para datos en JSON en body
 app.use(express.json());
 app.use(cors())
-
+app.use(fileupload())
 // Accedo o arquivo estático
 app.use(express.static(path.join(__dirname, "static")));
 
