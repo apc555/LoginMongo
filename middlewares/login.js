@@ -1,19 +1,18 @@
 const path = require("path");
-const carpetaStatica = path.join(__dirname, "../static")
+const rutaStatic = path.join(__dirname, "../static")
 const accionLogin = (req, res) => {
     let email    = req.body.email;
     let password = req.body.password;
     console.log(email,password)
     if(email == "admin@exemplo.com" && password == 'admin'){
-      res.sendFile("admin.html",{root:carpetaStatica})
+      res.sendFile("admin.html",{root:rutaStatic})
     }
     else if(email == "parque@libre.com" && password == 'parque'){
-      res.sendFile("usuario.html",{root:carpetaStatica})
+      res.sendFile("usuario.html",{root:rutaStatic})
     }
     else{
       //res.send(`Email: ${email}, Password: ${password}`);
-      res.sendFile("error.html",{root:carpetaStatica})
-
+      res.sendFile("error.html",{root:rutaStatic})
     }
   }
 
