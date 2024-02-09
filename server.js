@@ -3,7 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const fileupload = require("express-fileupload")
 const app = express();
-const {enviopaxina} = require("./midelwares/enviopaxina.js")
+const {accionLogin} = require("./midelwares/login.js")
 // para headers: application/x-www-form-urlencoded 
 app.use(express.urlencoded({ extended: true }));
 // para datos en JSON en body
@@ -28,6 +28,6 @@ app.post("/texto",(req,res)=>{
 
 // Esta petición necesita responder
 //Podes observar o que fai o navegador se comentas a línea 34
-app.post('/login', enviopaxina);
+app.post('/login', accionLogin); // revisa inputs e envia unha paxina
 
 app.listen(3000)
